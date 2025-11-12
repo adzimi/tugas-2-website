@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tracking DO</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  <script src="js/dataBahanAjar.js"></script>
+</head>
+<body>
+  <header class="topnav">
+    <div class="logo">📘 SITTA</div>
+    <nav>
+      <a href="index.html">🏠 Menu</a>
+      <a href="stok.html">📦 Stok</a>
+      <a href="tracking.html" class="active">🚚 Tracking</a>
+    </nav>
+  </header>
+
+  <div id="trackApp">
+    <h2>Tracking Delivery Order (DO)</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>No DO</th>
+          <th>Tanggal</th>
+          <th>Penerima</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="t in tracking" :key="t.noDO">
+          <td>{{ t.noDO }}</td>
+          <td>{{ t.tanggal }}</td>
+          <td>{{ t.penerima }}</td>
+          <td>{{ t.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Tambah Data DO</h3>
+    <form @submit.prevent="tambahDO">
+      <label>No DO:</label><input v-model="form.noDO" required>
+      <label>Tanggal:</label><input type="date" v-model="form.tanggal" required>
+      <label>Penerima:</label><input v-model="form.penerima" required>
+      <label>Status:</label><input v-model="form.status" required>
+      <button type="submit">Tambah</button>
+    </form>
+  </div>
+
+  <script src="js/tracking-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Stok Bahan Ajar</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  <script src="js/dataBahanAjar.js"></script>
+</head>
+<body>
+  <!-- Navigasi -->
+  <header class="topnav">
+    <div class="logo">📘 SITTA</div>
+    <nav>
+      <a href="index.html">🏠 Menu</a>
+      <a href="stok.html" class="active">📦 Stok</a>
+      <a href="tracking.html">🚚 Tracking</a>
+    </nav>
+  </header>
+
+  <div id="app">
+    <h2>Data Stok Bahan Ajar</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Kode</th>
+          <th>Judul</th>
+          <th>Kategori</th>
+          <th>Qty</th>
+          <th>Safety</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="b in stok" :key="b.kode">
+          <td>{{ b.kode }}</td>
+          <td>{{ b.judul }}</td>
+          <td>{{ b.kategori }}</td>
+          <td>{{ b.qty }}</td>
+          <td>{{ b.safety }}</td>
+          <td>
+            <span v-if="b.qty === 0" class="status-kosong">Kosong</span>
+            <span v-else-if="b.qty < b.safety" class="status-menipis">Menipis</span>
+            <span v-else class="status-aman">Aman</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Tambah / Perbarui Stok</h3>
+    <form @submit.prevent="tambahData">
+      <label>Kode:</label>
+      <input v-model.trim="form.kode" required>
+
+      <label>Judul:</label>
+      <input v-model="form.judul" required>
+
+      <label>Kategori:</label>
+      <input v-model="form.kategori" required>
+
+      <label>Qty:</label>
+      <input type="number" v-model.number="form.qty" min="1" required>
+
+      <label>Safety:</label>
+      <input type="number" v-model.number="form.safety" min="0" required>
+
+      <button type="submit">Simpan</button>
+    </form>
+  </div>
+
+  <script src="js/stok-app.js"></script>
+</body>
+</html>

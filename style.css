@@ -1,0 +1,218 @@
+/* Tema Modern Light UT-style */
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 30px;
+  background-color: #f9fafc;
+  color: #333;
+}
+
+h2, h3 {
+  color: #1e90ff;
+  border-left: 5px solid #1e90ff;
+  padding-left: 10px;
+}
+
+a {
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  margin-top: 15px;
+}
+
+th {
+  background-color: #1e90ff;
+  color: white;
+  text-align: left;
+  padding: 10px;
+}
+
+td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+  background-color: #f1f7ff;
+}
+
+input, select, button {
+  margin: 5px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #1e90ff;
+  box-shadow: 0 0 3px rgba(30,144,255,0.3);
+}
+
+button {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0f78dc;
+}
+
+form {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-top: 15px;
+}
+
+label {
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+hr {
+  margin: 25px 0;
+  border: 0;
+  height: 1px;
+  background-color: #ddd;
+}
+
+/* Status warna stok */
+.status-aman {
+  color: green;
+  font-weight: bold;
+}
+.status-menipis {
+  color: orange;
+  font-weight: bold;
+}
+.status-kosong {
+  color: red;
+  font-weight: bold;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 700px) {
+  body {
+    margin: 10px;
+  }
+  table {
+    font-size: 13px;
+  }
+  th, td {
+    padding: 6px;
+  }
+  form {
+    padding: 10px;
+  }
+}
+
+/* === Tampilan index modern === */
+.dashboard {
+  text-align: center;
+}
+
+.header {
+  background-color: #1e90ff;
+  color: white;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.header .logo {
+  font-size: 48px;
+}
+
+.menu-section {
+  margin-top: 40px;
+}
+
+.menu-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.menu-card {
+  display: block;
+  background-color: #fff;
+  color: #333;
+  width: 280px;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.menu-card .icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.footer {
+  margin-top: 50px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* === Navigasi Atas (Navbar) === */
+.topnav {
+  background-color: #1e90ff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 25px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.topnav .logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.topnav nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+.topnav nav a:hover {
+  text-decoration: underline;
+}
+
+.topnav nav a.active {
+  background-color: rgba(255,255,255,0.2);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
